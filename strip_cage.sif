@@ -1,0 +1,777 @@
+! strip_cage.sif
+Header
+  Mesh DB "." "strip_cage"
+End
+
+Simulation
+  Coordinate System = Cartesian
+  Simulation Type = Steady State
+  Steady State Max Iterations = 1
+  Output File = "strip_cage.result"
+End
+
+Constants
+  Permittivity Of Vacuum = 8.8542e-12
+End
+
+Body 1
+  Target Bodies(1) = 1
+  Equation = 1
+  Material = 1
+End
+
+Material 1
+  Relative Permittivity = 1.0
+End
+
+Equation 1
+  Active Solvers(1) = 1
+  Calculate Electric Energy = True
+End
+
+Solver 1
+  Equation = Stat Elec Solver
+  Variable = Potential
+  Variable DOFs = 1
+  Procedure = "StatElecSolve" "StatElecSolver"
+  Calculate Electric Field = True
+  Calculate Electric Flux = False
+  Linear System Solver = Direct
+  Linear System Direct Method = UMFPACK
+  Linear System GCR Restart = 50
+  Linear System Preconditioning = ILU2
+  Linear System Max Iterations = 2000
+  Linear System Convergence Tolerance = 1.0e-8
+  Linear System Abort Not Converged = True
+End
+
+
+
+
+
+
+! --- OUTER GAS BOX (Grounded Vessel Walls) ---
+Boundary Condition 1
+  Target Boundaries(1) = 1
+  Potential = 0.0
+End
+
+! --- BOTTOM FACE (M-THGEM) ---
+Boundary Condition 2
+  Target Boundaries(1) = 2
+  Potential = 33.33
+End
+
+! --- TOP FACE (Cathode) ---
+Boundary Condition 3
+  Target Boundaries(1) = 3
+  Potential = -1038.0
+End
+
+! Wire 1
+Boundary Condition 4
+  Target Boundaries(1) = 4
+  Potential = -0.0000
+End
+
+! Wire 2
+Boundary Condition 5
+  Target Boundaries(1) = 5
+  Potential = -8.5470
+End
+
+! Wire 3
+Boundary Condition 6
+  Target Boundaries(1) = 6
+  Potential = -17.0940
+End
+
+! Wire 4
+Boundary Condition 7
+  Target Boundaries(1) = 7
+  Potential = -25.6410
+End
+
+! Wire 5
+Boundary Condition 8
+  Target Boundaries(1) = 8
+  Potential = -34.1880
+End
+
+! Wire 6
+Boundary Condition 9
+  Target Boundaries(1) = 9
+  Potential = -42.7350
+End
+
+! Wire 7
+Boundary Condition 10
+  Target Boundaries(1) = 10
+  Potential = -51.2821
+End
+
+! Wire 8
+Boundary Condition 11
+  Target Boundaries(1) = 11
+  Potential = -59.8291
+End
+
+! Wire 9
+Boundary Condition 12
+  Target Boundaries(1) = 12
+  Potential = -68.3761
+End
+
+! Wire 10
+Boundary Condition 13
+  Target Boundaries(1) = 13
+  Potential = -76.9231
+End
+
+! Wire 11
+Boundary Condition 14
+  Target Boundaries(1) = 14
+  Potential = -85.4701
+End
+
+! Wire 12
+Boundary Condition 15
+  Target Boundaries(1) = 15
+  Potential = -94.0171
+End
+
+! Wire 13
+Boundary Condition 16
+  Target Boundaries(1) = 16
+  Potential = -102.5641
+End
+
+! Wire 14
+Boundary Condition 17
+  Target Boundaries(1) = 17
+  Potential = -111.1111
+End
+
+! Wire 15
+Boundary Condition 18
+  Target Boundaries(1) = 18
+  Potential = -119.6581
+End
+
+! Wire 16
+Boundary Condition 19
+  Target Boundaries(1) = 19
+  Potential = -128.2051
+End
+
+! Wire 17
+Boundary Condition 20
+  Target Boundaries(1) = 20
+  Potential = -136.7521
+End
+
+! Wire 18
+Boundary Condition 21
+  Target Boundaries(1) = 21
+  Potential = -145.2991
+End
+
+! Wire 19
+Boundary Condition 22
+  Target Boundaries(1) = 22
+  Potential = -153.8462
+End
+
+! Wire 20
+Boundary Condition 23
+  Target Boundaries(1) = 23
+  Potential = -162.3932
+End
+
+! Wire 21
+Boundary Condition 24
+  Target Boundaries(1) = 24
+  Potential = -170.9402
+End
+
+! Wire 22
+Boundary Condition 25
+  Target Boundaries(1) = 25
+  Potential = -179.4872
+End
+
+! Wire 23
+Boundary Condition 26
+  Target Boundaries(1) = 26
+  Potential = -188.0342
+End
+
+! Wire 24
+Boundary Condition 27
+  Target Boundaries(1) = 27
+  Potential = -196.5812
+End
+
+! Wire 25
+Boundary Condition 28
+  Target Boundaries(1) = 28
+  Potential = -205.1282
+End
+
+! Wire 26
+Boundary Condition 29
+  Target Boundaries(1) = 29
+  Potential = -213.6752
+End
+
+! Wire 27
+Boundary Condition 30
+  Target Boundaries(1) = 30
+  Potential = -222.2222
+End
+
+! Wire 28
+Boundary Condition 31
+  Target Boundaries(1) = 31
+  Potential = -230.7692
+End
+
+! Wire 29
+Boundary Condition 32
+  Target Boundaries(1) = 32
+  Potential = -239.3162
+End
+
+! Wire 30
+Boundary Condition 33
+  Target Boundaries(1) = 33
+  Potential = -247.8632
+End
+
+! Wire 31
+Boundary Condition 34
+  Target Boundaries(1) = 34
+  Potential = -256.4103
+End
+
+! Wire 32
+Boundary Condition 35
+  Target Boundaries(1) = 35
+  Potential = -264.9573
+End
+
+! Wire 33
+Boundary Condition 36
+  Target Boundaries(1) = 36
+  Potential = -273.5043
+End
+
+! Wire 34
+Boundary Condition 37
+  Target Boundaries(1) = 37
+  Potential = -282.0513
+End
+
+! Wire 35
+Boundary Condition 38
+  Target Boundaries(1) = 38
+  Potential = -290.5983
+End
+
+! Wire 36
+Boundary Condition 39
+  Target Boundaries(1) = 39
+  Potential = -299.1453
+End
+
+! Wire 37
+Boundary Condition 40
+  Target Boundaries(1) = 40
+  Potential = -307.6923
+End
+
+! Wire 38
+Boundary Condition 41
+  Target Boundaries(1) = 41
+  Potential = -316.2393
+End
+
+! Wire 39
+Boundary Condition 42
+  Target Boundaries(1) = 42
+  Potential = -324.7863
+End
+
+! Wire 40
+Boundary Condition 43
+  Target Boundaries(1) = 43
+  Potential = -333.3333
+End
+
+! Wire 41
+Boundary Condition 44
+  Target Boundaries(1) = 44
+  Potential = -341.8803
+End
+
+! Wire 42
+Boundary Condition 45
+  Target Boundaries(1) = 45
+  Potential = -350.4274
+End
+
+! Wire 43
+Boundary Condition 46
+  Target Boundaries(1) = 46
+  Potential = -358.9744
+End
+
+! Wire 44
+Boundary Condition 47
+  Target Boundaries(1) = 47
+  Potential = -367.5214
+End
+
+! Wire 45
+Boundary Condition 48
+  Target Boundaries(1) = 48
+  Potential = -376.0684
+End
+
+! Wire 46
+Boundary Condition 49
+  Target Boundaries(1) = 49
+  Potential = -384.6154
+End
+
+! Wire 47
+Boundary Condition 50
+  Target Boundaries(1) = 50
+  Potential = -393.1624
+End
+
+! Wire 48
+Boundary Condition 51
+  Target Boundaries(1) = 51
+  Potential = -401.7094
+End
+
+! Wire 49
+Boundary Condition 52
+  Target Boundaries(1) = 52
+  Potential = -410.2564
+End
+
+! Wire 50
+Boundary Condition 53
+  Target Boundaries(1) = 53
+  Potential = -418.8034
+End
+
+! Wire 51
+Boundary Condition 54
+  Target Boundaries(1) = 54
+  Potential = -427.3504
+End
+
+! Wire 52
+Boundary Condition 55
+  Target Boundaries(1) = 55
+  Potential = -435.8974
+End
+
+! Wire 53
+Boundary Condition 56
+  Target Boundaries(1) = 56
+  Potential = -444.4444
+End
+
+! Wire 54
+Boundary Condition 57
+  Target Boundaries(1) = 57
+  Potential = -452.9915
+End
+
+! Wire 55
+Boundary Condition 58
+  Target Boundaries(1) = 58
+  Potential = -461.5385
+End
+
+! Wire 56
+Boundary Condition 59
+  Target Boundaries(1) = 59
+  Potential = -470.0855
+End
+
+! Wire 57
+Boundary Condition 60
+  Target Boundaries(1) = 60
+  Potential = -478.6325
+End
+
+! Wire 58
+Boundary Condition 61
+  Target Boundaries(1) = 61
+  Potential = -487.1795
+End
+
+! Wire 59
+Boundary Condition 62
+  Target Boundaries(1) = 62
+  Potential = -495.7265
+End
+
+! Wire 60
+Boundary Condition 63
+  Target Boundaries(1) = 63
+  Potential = -504.2735
+End
+
+! Wire 61
+Boundary Condition 64
+  Target Boundaries(1) = 64
+  Potential = -512.8205
+End
+
+! Wire 62
+Boundary Condition 65
+  Target Boundaries(1) = 65
+  Potential = -521.3675
+End
+
+! Wire 63
+Boundary Condition 66
+  Target Boundaries(1) = 66
+  Potential = -529.9145
+End
+
+! Wire 64
+Boundary Condition 67
+  Target Boundaries(1) = 67
+  Potential = -538.4615
+End
+
+! Wire 65
+Boundary Condition 68
+  Target Boundaries(1) = 68
+  Potential = -547.0085
+End
+
+! Wire 66
+Boundary Condition 69
+  Target Boundaries(1) = 69
+  Potential = -555.5556
+End
+
+! Wire 67
+Boundary Condition 70
+  Target Boundaries(1) = 70
+  Potential = -564.1026
+End
+
+! Wire 68
+Boundary Condition 71
+  Target Boundaries(1) = 71
+  Potential = -572.6496
+End
+
+! Wire 69
+Boundary Condition 72
+  Target Boundaries(1) = 72
+  Potential = -581.1966
+End
+
+! Wire 70
+Boundary Condition 73
+  Target Boundaries(1) = 73
+  Potential = -589.7436
+End
+
+! Wire 71
+Boundary Condition 74
+  Target Boundaries(1) = 74
+  Potential = -598.2906
+End
+
+! Wire 72
+Boundary Condition 75
+  Target Boundaries(1) = 75
+  Potential = -606.8376
+End
+
+! Wire 73
+Boundary Condition 76
+  Target Boundaries(1) = 76
+  Potential = -615.3846
+End
+
+! Wire 74
+Boundary Condition 77
+  Target Boundaries(1) = 77
+  Potential = -623.9316
+End
+
+! Wire 75
+Boundary Condition 78
+  Target Boundaries(1) = 78
+  Potential = -632.4786
+End
+
+! Wire 76
+Boundary Condition 79
+  Target Boundaries(1) = 79
+  Potential = -641.0256
+End
+
+! Wire 77
+Boundary Condition 80
+  Target Boundaries(1) = 80
+  Potential = -649.5726
+End
+
+! Wire 78
+Boundary Condition 81
+  Target Boundaries(1) = 81
+  Potential = -658.1197
+End
+
+! Wire 79
+Boundary Condition 82
+  Target Boundaries(1) = 82
+  Potential = -666.6667
+End
+
+! Wire 80
+Boundary Condition 83
+  Target Boundaries(1) = 83
+  Potential = -675.2137
+End
+
+! Wire 81
+Boundary Condition 84
+  Target Boundaries(1) = 84
+  Potential = -683.7607
+End
+
+! Wire 82
+Boundary Condition 85
+  Target Boundaries(1) = 85
+  Potential = -692.3077
+End
+
+! Wire 83
+Boundary Condition 86
+  Target Boundaries(1) = 86
+  Potential = -700.8547
+End
+
+! Wire 84
+Boundary Condition 87
+  Target Boundaries(1) = 87
+  Potential = -709.4017
+End
+
+! Wire 85
+Boundary Condition 88
+  Target Boundaries(1) = 88
+  Potential = -717.9487
+End
+
+! Wire 86
+Boundary Condition 89
+  Target Boundaries(1) = 89
+  Potential = -726.4957
+End
+
+! Wire 87
+Boundary Condition 90
+  Target Boundaries(1) = 90
+  Potential = -735.0427
+End
+
+! Wire 88
+Boundary Condition 91
+  Target Boundaries(1) = 91
+  Potential = -743.5897
+End
+
+! Wire 89
+Boundary Condition 92
+  Target Boundaries(1) = 92
+  Potential = -752.1368
+End
+
+! Wire 90
+Boundary Condition 93
+  Target Boundaries(1) = 93
+  Potential = -760.6838
+End
+
+! Wire 91
+Boundary Condition 94
+  Target Boundaries(1) = 94
+  Potential = -769.2308
+End
+
+! Wire 92
+Boundary Condition 95
+  Target Boundaries(1) = 95
+  Potential = -777.7778
+End
+
+! Wire 93
+Boundary Condition 96
+  Target Boundaries(1) = 96
+  Potential = -786.3248
+End
+
+! Wire 94
+Boundary Condition 97
+  Target Boundaries(1) = 97
+  Potential = -794.8718
+End
+
+! Wire 95
+Boundary Condition 98
+  Target Boundaries(1) = 98
+  Potential = -803.4188
+End
+
+! Wire 96
+Boundary Condition 99
+  Target Boundaries(1) = 99
+  Potential = -811.9658
+End
+
+! Wire 97
+Boundary Condition 100
+  Target Boundaries(1) = 100
+  Potential = -820.5128
+End
+
+! Wire 98
+Boundary Condition 101
+  Target Boundaries(1) = 101
+  Potential = -829.0598
+End
+
+! Wire 99
+Boundary Condition 102
+  Target Boundaries(1) = 102
+  Potential = -837.6068
+End
+
+! Wire 100
+Boundary Condition 103
+  Target Boundaries(1) = 103
+  Potential = -846.1538
+End
+
+! Wire 101
+Boundary Condition 104
+  Target Boundaries(1) = 104
+  Potential = -854.7009
+End
+
+! Wire 102
+Boundary Condition 105
+  Target Boundaries(1) = 105
+  Potential = -863.2479
+End
+
+! Wire 103
+Boundary Condition 106
+  Target Boundaries(1) = 106
+  Potential = -871.7949
+End
+
+! Wire 104
+Boundary Condition 107
+  Target Boundaries(1) = 107
+  Potential = -880.3419
+End
+
+! Wire 105
+Boundary Condition 108
+  Target Boundaries(1) = 108
+  Potential = -888.8889
+End
+
+! Wire 106
+Boundary Condition 109
+  Target Boundaries(1) = 109
+  Potential = -897.4359
+End
+
+! Wire 107
+Boundary Condition 110
+  Target Boundaries(1) = 110
+  Potential = -905.9829
+End
+
+! Wire 108
+Boundary Condition 111
+  Target Boundaries(1) = 111
+  Potential = -914.5299
+End
+
+! Wire 109
+Boundary Condition 112
+  Target Boundaries(1) = 112
+  Potential = -923.0769
+End
+
+! Wire 110
+Boundary Condition 113
+  Target Boundaries(1) = 113
+  Potential = -931.6239
+End
+
+! Wire 111
+Boundary Condition 114
+  Target Boundaries(1) = 114
+  Potential = -940.1709
+End
+
+! Wire 112
+Boundary Condition 115
+  Target Boundaries(1) = 115
+  Potential = -948.7179
+End
+
+! Wire 113
+Boundary Condition 116
+  Target Boundaries(1) = 116
+  Potential = -957.2650
+End
+
+! Wire 114
+Boundary Condition 117
+  Target Boundaries(1) = 117
+  Potential = -965.8120
+End
+
+! Wire 115
+Boundary Condition 118
+  Target Boundaries(1) = 118
+  Potential = -974.3590
+End
+
+! Wire 116
+Boundary Condition 119
+  Target Boundaries(1) = 119
+  Potential = -982.9060
+End
+
+! Wire 117
+Boundary Condition 120
+  Target Boundaries(1) = 120
+  Potential = -991.4530
+End
+
+! Wire 118
+Boundary Condition 121
+  Target Boundaries(1) = 121
+  Potential = -1000.0000
+End
